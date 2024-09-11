@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    background-color: black;
+}
+.loader{
+    width: 200px;
+    height: 200px;
+    box-shadow: 15px 14px 20px #0000008c;
+    border: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+.loader::before{
+    content: '';
+    
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    background-image: conic-gradient( #00ffd5 50deg, transparent 20%);
+    filter: blur(8px);
+    animation: spin 1.5s linear infinite;
+
+}
+.loader:hover::before{
+    background-image: conic-gradient( #f255dd 50deg, transparent 10%);
+    filter: blur(8px);
+}
+.loader::after{
+    content: "DEEPIKA";
+    height: 190px;
+    width: 190px;
+    justify-content: center;
+    position: absolute;
+    background-color: black;
+    display: flex;
+    border: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
